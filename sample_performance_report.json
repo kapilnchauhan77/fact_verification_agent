@@ -1,0 +1,502 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-06-16T11:48:11.608471",
+    "session_duration": 0.0017552375793457031,
+    "total_claims_processed": 5
+  },
+  "summary": {
+    "total_claims_processed": 5,
+    "successful_claims": 5,
+    "failed_claims": 0,
+    "success_rate": 1.0,
+    "total_processing_time": 178.15,
+    "average_time_per_claim": 35.63,
+    "throughput_claims_per_minute": 170824.2193863698
+  },
+  "checkpoint_categories": {
+    "claim_extraction": {
+      "gemini_initialization": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "prompt_creation": {
+        "count": 5,
+        "average": 0.05,
+        "min": 0.04,
+        "max": 0.06,
+        "median": 0.05,
+        "std_dev": 0.007905694150420948,
+        "success_rate": 1.0
+      },
+      "gemini_api_call": {
+        "count": 5,
+        "average": 2.1,
+        "min": 1.8,
+        "max": 2.4,
+        "median": 2.1,
+        "std_dev": 0.2549509756796392,
+        "success_rate": 1.0
+      },
+      "response_parsing": {
+        "count": 5,
+        "average": 0.1,
+        "min": 0.08,
+        "max": 0.12,
+        "median": 0.1,
+        "std_dev": 0.015811388300841896,
+        "success_rate": 1.0
+      },
+      "claim_validation": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "category_totals": {
+        "average": 0.75,
+        "total_time": 11.249999999999998,
+        "count": 15,
+        "percentage_of_total": 12.82051282051282
+      }
+    },
+    "source_search": {
+      "search_query_generation": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "web_search_execution": {
+        "count": 5,
+        "average": 9.46,
+        "min": 5.8,
+        "max": 14.2,
+        "median": 9.3,
+        "std_dev": 3.6052739146977446,
+        "success_rate": 1.0
+      },
+      "source_prioritization": {
+        "count": 5,
+        "average": 0.92,
+        "min": 0.5,
+        "max": 1.5,
+        "median": 0.8,
+        "std_dev": 0.4207136793592526,
+        "success_rate": 1.0
+      },
+      "domain_filtering": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "result_deduplication": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "category_totals": {
+        "average": 5.19,
+        "total_time": 51.9,
+        "count": 10,
+        "percentage_of_total": 59.14529914529915
+      }
+    },
+    "content_extraction": {
+      "url_preprocessing": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "newspaper3k_extraction": {
+        "count": 5,
+        "average": 2.84,
+        "min": 1.8,
+        "max": 4.1,
+        "median": 2.8,
+        "std_dev": 0.8792041856133306,
+        "success_rate": 0.6
+      },
+      "requests_extraction": {
+        "count": 2,
+        "average": 2.8,
+        "min": 2.1,
+        "max": 3.5,
+        "median": 2.8,
+        "std_dev": 0.9899494936611665,
+        "success_rate": 1.0
+      },
+      "aiohttp_extraction": {
+        "count": 1,
+        "average": 1.9,
+        "min": 1.9,
+        "max": 1.9,
+        "median": 1.9,
+        "std_dev": 0.0,
+        "success_rate": 1.0
+      },
+      "content_validation": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "category_totals": {
+        "average": 2.7125,
+        "total_time": 21.7,
+        "count": 8,
+        "percentage_of_total": 24.729344729344728
+      }
+    },
+    "evidence_analysis": {
+      "keyword_matching": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "evidence_extraction": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "contradiction_detection": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "relevance_scoring": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "language_analysis": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      }
+    },
+    "final_processing": {
+      "authenticity_calculation": {
+        "count": 5,
+        "average": 0.41,
+        "min": 0.25,
+        "max": 0.6,
+        "median": 0.4,
+        "std_dev": 0.14317821063276354,
+        "success_rate": 1.0
+      },
+      "result_compilation": {
+        "count": 5,
+        "average": 0.17,
+        "min": 0.12,
+        "max": 0.2,
+        "median": 0.18,
+        "std_dev": 0.03464101615137755,
+        "success_rate": 1.0
+      },
+      "response_formatting": {
+        "count": 0,
+        "average": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "median": 0.0,
+        "success_rate": 0.0
+      },
+      "category_totals": {
+        "average": 0.29,
+        "total_time": 2.9000000000000004,
+        "count": 10,
+        "percentage_of_total": 3.3048433048433052
+      }
+    }
+  },
+  "individual_checkpoints": {
+    "source_search": {
+      "count": 5,
+      "average": 12.34,
+      "min": 7.2,
+      "max": 18.6,
+      "median": 12.1,
+      "std_dev": 4.721546356862337,
+      "success_rate": 1.0
+    },
+    "evidence_analysis": {
+      "count": 5,
+      "average": 5.74,
+      "min": 3.9,
+      "max": 8.3,
+      "median": 5.2,
+      "std_dev": 1.795271567200907,
+      "success_rate": 1.0
+    },
+    "newspaper3k_extraction": {
+      "count": 5,
+      "average": 2.84,
+      "min": 1.8,
+      "max": 4.1,
+      "median": 2.8,
+      "std_dev": 0.8792041856133306,
+      "success_rate": 0.6
+    },
+    "requests_extraction": {
+      "count": 2,
+      "average": 2.8,
+      "min": 2.1,
+      "max": 3.5,
+      "median": 2.8,
+      "std_dev": 0.9899494936611665,
+      "success_rate": 1.0
+    },
+    "source_prioritization": {
+      "count": 5,
+      "average": 0.92,
+      "min": 0.5,
+      "max": 1.5,
+      "median": 0.8,
+      "std_dev": 0.4207136793592526,
+      "success_rate": 1.0
+    },
+    "authenticity_calculation": {
+      "count": 5,
+      "average": 0.41,
+      "min": 0.25,
+      "max": 0.6,
+      "median": 0.4,
+      "std_dev": 0.14317821063276354,
+      "success_rate": 1.0
+    },
+    "prompt_creation": {
+      "count": 5,
+      "average": 0.05,
+      "min": 0.04,
+      "max": 0.06,
+      "median": 0.05,
+      "std_dev": 0.007905694150420948,
+      "success_rate": 1.0
+    },
+    "aiohttp_extraction": {
+      "count": 1,
+      "average": 1.9,
+      "min": 1.9,
+      "max": 1.9,
+      "median": 1.9,
+      "std_dev": 0.0,
+      "success_rate": 1.0
+    },
+    "response_parsing": {
+      "count": 5,
+      "average": 0.1,
+      "min": 0.08,
+      "max": 0.12,
+      "median": 0.1,
+      "std_dev": 0.015811388300841896,
+      "success_rate": 1.0
+    },
+    "gemini_api_call": {
+      "count": 5,
+      "average": 2.1,
+      "min": 1.8,
+      "max": 2.4,
+      "median": 2.1,
+      "std_dev": 0.2549509756796392,
+      "success_rate": 1.0
+    },
+    "result_compilation": {
+      "count": 5,
+      "average": 0.17,
+      "min": 0.12,
+      "max": 0.2,
+      "median": 0.18,
+      "std_dev": 0.03464101615137755,
+      "success_rate": 1.0
+    },
+    "web_search_execution": {
+      "count": 5,
+      "average": 9.46,
+      "min": 5.8,
+      "max": 14.2,
+      "median": 9.3,
+      "std_dev": 3.6052739146977446,
+      "success_rate": 1.0
+    }
+  },
+  "performance_by_claim_type": {
+    "medical": {
+      "average": 28.25,
+      "count": 1,
+      "min": 28.25,
+      "max": 28.25
+    },
+    "financial": {
+      "average": 31.47,
+      "count": 1,
+      "min": 31.47,
+      "max": 31.47
+    },
+    "scientific": {
+      "average": 48.162499999999994,
+      "count": 2,
+      "min": 45.66,
+      "max": 50.665
+    },
+    "statistical": {
+      "average": 22.105,
+      "count": 1,
+      "min": 22.105,
+      "max": 22.105
+    }
+  },
+  "performance_trends": {},
+  "bottleneck_analysis": [
+    {
+      "checkpoint": "source_search",
+      "average_time": 12.34,
+      "max_time": 18.6,
+      "count": 5,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "web_search_execution",
+      "average_time": 9.46,
+      "max_time": 14.2,
+      "count": 5,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "evidence_analysis",
+      "average_time": 5.74,
+      "max_time": 8.3,
+      "count": 5,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "newspaper3k_extraction",
+      "average_time": 2.84,
+      "max_time": 4.1,
+      "count": 5,
+      "success_rate": 0.6
+    },
+    {
+      "checkpoint": "requests_extraction",
+      "average_time": 2.8,
+      "max_time": 3.5,
+      "count": 2,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "gemini_api_call",
+      "average_time": 2.1,
+      "max_time": 2.4,
+      "count": 5,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "aiohttp_extraction",
+      "average_time": 1.9,
+      "max_time": 1.9,
+      "count": 1,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "source_prioritization",
+      "average_time": 0.92,
+      "max_time": 1.5,
+      "count": 5,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "authenticity_calculation",
+      "average_time": 0.41,
+      "max_time": 0.6,
+      "count": 5,
+      "success_rate": 1.0
+    },
+    {
+      "checkpoint": "result_compilation",
+      "average_time": 0.17,
+      "max_time": 0.2,
+      "count": 5,
+      "success_rate": 1.0
+    }
+  ],
+  "recent_claims": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "According to WHO, vaccines are 95% effective",
+      "claim_type": "medical",
+      "duration": 28.25,
+      "success": true,
+      "timestamp": "2025-06-16T11:48:11.606762",
+      "checkpoint_count": 11
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "Apple stock increased 25% in 2023",
+      "claim_type": "financial",
+      "duration": 31.47,
+      "success": true,
+      "timestamp": "2025-06-16T11:48:11.606780",
+      "checkpoint_count": 10
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "Scientists developed room temperature quantum computer",
+      "claim_type": "scientific",
+      "duration": 45.66,
+      "success": true,
+      "timestamp": "2025-06-16T11:48:11.606783",
+      "checkpoint_count": 11
+    },
+    {
+      "claim_id": "claim_004",
+      "claim_text": "US unemployment dropped to 3.1% in December 2023",
+      "claim_type": "statistical",
+      "duration": 22.105,
+      "success": true,
+      "timestamp": "2025-06-16T11:48:11.606785",
+      "checkpoint_count": 10
+    },
+    {
+      "claim_id": "claim_005",
+      "claim_text": "Climate change causing sea level rise acceleration",
+      "claim_type": "scientific",
+      "duration": 50.665,
+      "success": true,
+      "timestamp": "2025-06-16T11:48:11.606789",
+      "checkpoint_count": 11
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "standard_time": 25.212597846984863,
+  "ultra_time": 10.29284381866455,
+  "speedup": 2.4495269034652547,
+  "optimization_stats": {
+    "predictive_cache_hits": 0,
+    "custom_scraper_successes": 0,
+    "intelligent_queries_generated": 6,
+    "advanced_evidence_matches": 2
+  },
+  "ultra_stats": {
+    "ultra_configuration": {
+      "max_urls": 6,
+      "priority_sources_limit": 4,
+      "concurrent_limit": 15,
+      "timeout": 2,
+      "max_search_queries": 2,
+      "blocked_domains_count": 52,
+      "ultra_priority_domains": 6
+    },
+    "optimization_modules": {
+      "predictive_caching": {
+        "total_patterns": 6,
+        "recent_patterns": 6,
+        "trending_topics": 3,
+        "model_last_updated": "2025-06-16T12:14:06.097287",
+        "cache_stats": {
+          "search_cache": {
+            "hits": 0,
+            "misses": 6,
+            "evictions": 0,
+            "expired_cleanups": 0,
+            "size": 3,
+            "max_size": 1000,
+            "hit_rate": 0.0,
+            "fill_rate": 0.003
+          },
+          "content_cache": {
+            "hits": 0,
+            "misses": 0,
+            "evictions": 0,
+            "expired_cleanups": 0,
+            "size": 0,
+            "max_size": 2000,
+            "hit_rate": 0,
+            "fill_rate": 0.0
+          },
+          "prediction_cache": {
+            "hits": 0,
+            "misses": 0,
+            "evictions": 0,
+            "expired_cleanups": 0,
+            "size": 0,
+            "max_size": 500,
+            "hit_rate": 0,
+            "fill_rate": 0.0
+          }
+        },
+        "clustering_enabled": false,
+        "vectorizer_features": 0
+      },
+      "advanced_evidence": {
+        "model_loaded": false,
+        "max_sentences_per_source": 30,
+        "min_sentence_length": 25,
+        "semantic_threshold": 0.6,
+        "supporting_patterns": 4,
+        "contradictory_patterns": 4,
+        "thread_pool_workers": 4
+      },
+      "custom_scrapers": {
+        "supported_domains": 20,
+        "timeout": 5,
+        "max_content_length": 15000,
+        "min_content_length": 200,
+        "user_agents": 4
+      },
+      "intelligent_queries": {
+        "supported_claim_types": [
+          "ClaimType.MEDICAL",
+          "ClaimType.SCIENTIFIC",
+          "ClaimType.POLITICAL",
+          "ClaimType.FINANCIAL",
+          "ClaimType.STATISTICAL",
+          "ClaimType.TECHNOLOGY"
+        ],
+        "max_total_queries": 3,
+        "entity_patterns": 7,
+        "stop_words": 28,
+        "query_length_limits": {
+          "min": 10,
+          "max": 100
+        }
+      }
+    },
+    "runtime_metrics": {
+      "predictive_cache_hits": 0,
+      "custom_scraper_uses": 2,
+      "intelligent_query_uses": 0,
+      "advanced_evidence_uses": 0
+    }
+  }
+}

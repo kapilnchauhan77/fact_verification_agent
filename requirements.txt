@@ -1,0 +1,73 @@
+# Google AI and Vertex AI
+google-cloud-aiplatform>=1.45.0
+vertexai>=1.45.0
+google-cloud-storage>=2.14.0
+google-generativeai>=0.3.0
+
+# Document Processing and OCR
+google-cloud-vision>=3.4.0
+pdf2image>=1.17.0
+Pillow>=10.2.0
+python-docx>=1.1.0
+PyPDF2>=3.0.1
+pytesseract>=0.3.10
+
+# Extended Document Format Support
+python-pptx>=0.6.23
+xlrd>=2.0.1
+openpyxl>=3.1.2
+odfpy>=1.4.1
+striprtf>=0.0.26
+extract-msg>=0.45.0
+eml-parser>=1.17.0
+ebooklib>=0.18
+markdownify>=0.11.6
+mammoth>=1.6.0
+# textract has conflicts - using alternative document processing
+pdfminer.six>=20231228
+pdfplumber>=0.10.0
+
+# Additional text extraction (optional - install separately if needed)
+# camelot-py[cv]>=0.11.0  # Has complex dependencies
+# tabula-py>=2.8.2
+
+# Archive and compression
+py7zr>=0.21.0
+rarfile>=4.1
+
+# Audio/Video text extraction (optional)
+SpeechRecognition>=3.10.0
+pydub>=0.25.1
+moviepy>=1.0.3
+
+# Text Processing and NLP
+spacy>=3.7.0
+nltk>=3.8.1
+textblob>=0.17.1
+sentence-transformers>=2.2.2
+
+# Web Search and Fact Checking
+requests>=2.31.0
+# beautifulsoup4 version compatible with all dependencies
+beautifulsoup4>=4.11.1,<4.13.0
+selenium>=4.15.0
+newspaper3k>=0.2.8
+google-search-results>=2.4.2
+aiohttp>=3.9.0
+readability-lxml>=0.8.4
+
+# Data Processing
+pandas>=2.2.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Configuration and Utilities
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+tqdm>=4.66.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
