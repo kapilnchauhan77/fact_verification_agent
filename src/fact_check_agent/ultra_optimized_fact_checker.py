@@ -25,6 +25,7 @@ import random
 from .config import config, FACT_CHECK_SOURCES
 from .claim_extractor import Claim, ClaimType
 from .checkpoint_monitor import TimedCheckpoint, start_checkpoint, end_checkpoint, add_claim_report
+from .search_services import unified_search_service, SearchResult as UnifiedSearchResult
 
 # Import all advanced optimization modules
 from .predictive_caching_system import predictive_cache

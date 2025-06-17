@@ -600,6 +600,15 @@ class FactCheckAgent:
         """
         return self.performance_monitor.optimize_settings()
 
+    def get_search_provider_stats(self) -> Dict[str, Any]:
+        """
+        Get search provider health and usage statistics
+        
+        Returns:
+            Search provider statistics including health, configuration, and usage
+        """
+        return self.fact_checker.get_search_provider_stats()
+
     async def process_batch_documents(
         self,
         document_paths: List[str],

@@ -27,6 +27,7 @@ from .claim_extractor import Claim, ClaimType
 from .checkpoint_monitor import TimedCheckpoint, start_checkpoint, end_checkpoint, add_claim_report
 from .performance_cache import search_cache, content_cache, source_cache
 from .enhanced_content_extractor import enhanced_extractor
+from .search_services import unified_search_service, SearchResult as UnifiedSearchResult
 
 
 # Backward compatibility imports
@@ -434,39 +435,64 @@ class FactChecker:
             return []
     
     async def _google_search_cached(self, query: str) -> List[Source]:
-        """Google search with enhanced caching"""
-        if not config.serp_api_key:
-            return []
-        
+        """Unified search with automatic fallback between providers"""
         try:
-            search = GoogleSearch({
-                "q": query,
-                "api_key": config.serp_api_key,
-                "num": 8,  # Reduced results for speed
-                "safe": "active"
-            })
+            # Use unified search service with fallback
+            search_response = await unified_search_service.search(query, max_results=8)
             
-            results = search.get_dict()
+            if not search_response.results:
+                logger.warning(f"No search results from any provider for query: {query[:50]}...")
+                return []
+            
+            # Convert unified search results to our Source format
             sources = []
+            for result in search_response.results:
+                source = await self._convert_unified_result_to_source(result)
+                if source:
+                    sources.append(source)
             
-            if "organic_results" in results:
-                # Process results concurrently
-                tasks = []
-                for result in results["organic_results"][:6]:  # Further reduced
-                    task = self._fast_source_creation(result)
-                    tasks.append(task)
-                
-                source_results = await asyncio.gather(*tasks, return_exceptions=True)
-                
-                for source in source_results:
-                    if isinstance(source, Source):
-                        sources.append(source)
+            # Log which provider was used for monitoring
+            logger.info(f"🔍 Search via {search_response.provider_used}: {len(sources)} sources "
+                       f"{'(cached)' if search_response.cache_hit else ''}")
             
             return sources
             
         except Exception as e:
-            logger.debug(f"Google search failed: {str(e)}")
+            logger.warning(f"Unified search failed: {str(e)}")
             return []
+    
+    async def _convert_unified_result_to_source(self, result: UnifiedSearchResult) -> Optional[Source]:
+        """Convert unified search result to Source object"""
+        try:
+            # Skip blocked domains immediately
+            if any(blocked in result.domain for blocked in self.blocked_domains):
+                return None
+            
+            # Get credibility score
+            credibility_score = self.source_credibility.get(result.domain, 0.5)
+            
+            # Skip very low-credibility sources
+            if credibility_score < 0.4:
+                return None
+            
+            # Try fast content extraction with caching
+            content = await self._ultra_fast_content_extraction(result.url)
+            if not content:
+                content = result.snippet  # Fallback to snippet
+            
+            return Source(
+                url=result.url,
+                title=result.title,
+                content=content,
+                relevance_score=result.relevance_score,
+                credibility_score=credibility_score,
+                publication_date=result.publication_date,
+                domain=result.domain
+            )
+            
+        except Exception as e:
+            logger.debug(f"Failed to convert unified result to source: {str(e)}")
+            return None
     
     async def _fast_source_creation(self, result: Dict) -> Optional[Source]:
         """Ultra-fast source creation with caching"""
@@ -991,3 +1017,7 @@ class FactChecker:
     def get_ultra_performance_stats(self) -> Dict[str, Any]:
         """Get ultra-optimization performance statistics"""
         return ultra_fact_checker.get_ultra_performance_stats()
+    
+    def get_search_provider_stats(self) -> Dict[str, Any]:
+        """Get search provider health and usage statistics"""
+        return unified_search_service.get_provider_stats()

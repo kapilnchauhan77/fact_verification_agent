@@ -23,6 +23,10 @@ class FactCheckConfig(BaseSettings):
     google_search_api_key: str = Field(default="", env="GOOGLE_SEARCH_API_KEY")
     google_search_engine_id: str = Field(default="", env="GOOGLE_SEARCH_ENGINE_ID")
     
+    # GCP Search JSON API (alternative to Google Custom Search)
+    gcp_search_api_key: str = Field(default="", env="GCP_SEARCH_API_KEY")
+    gcp_search_engine_id: str = Field(default="", env="GCP_SEARCH_ENGINE_ID")
+    
     # Fact-Check Sources
     reuters_api_key: str = Field(default="", env="REUTERS_API_KEY")
     ap_news_api_key: str = Field(default="", env="AP_NEWS_API_KEY")
@@ -63,9 +67,11 @@ class FactCheckConfig(BaseSettings):
     debug: bool = Field(default=True, env="DEBUG")
     log_level: str = Field(default="INFO", env="LOG_LEVEL")
     
-    class Config:
-        env_file = ".env"
-        case_sensitive = False
+    model_config = {
+        "env_file": ".env",
+        "case_sensitive": False,
+        "extra": "ignore"
+    }
 
 # Source configuration for different types of claims
 FACT_CHECK_SOURCES = {

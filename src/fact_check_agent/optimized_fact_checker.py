@@ -27,6 +27,7 @@ from .claim_extractor import Claim, ClaimType
 from .checkpoint_monitor import TimedCheckpoint, start_checkpoint, end_checkpoint, add_claim_report
 from .performance_cache import search_cache, content_cache, source_cache
 from .enhanced_content_extractor import enhanced_extractor
+from .search_services import unified_search_service, SearchResult as UnifiedSearchResult
 
 logger = logging.getLogger(__name__)
 
